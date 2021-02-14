@@ -1,0 +1,62 @@
+Linear Search
+In this tutorial, you will learn about linear search. Also, you will find working examples of linear search C, C++, Java and Python.
+
+
+Linear search is the simplest searching algorithm that searches for an element in a list in sequential order. We start at one end and check every element until the desired element is not found.
+
+How Linear Search Works?
+The following steps are followed to search for an element k = 1 in the list below.
+
+Initial array
+Array to be searched for
+Start from the first element, compare k with each element x.
+Element not found
+Compare with each element
+If x == k, return the index.
+Element found
+Element found
+Else, return not found.
+Linear Search Algorithm
+LinearSearch(array, key)
+  for each item in the array
+    if item == value
+      return its index
+Python, Java and C/C++ Examples
+Python
+Java
+C
+C++
+// Linear Search in Java
+
+class LinearSearch {
+  public static int linearSearch(int array[], int x) {
+  int n = array.length;
+
+  // Going through array sequencially
+  for (int i = 0; i < n; i++) {
+    if (array[i] == x)
+    return i;
+  }
+  return -1;
+  }
+
+  public static void main(String args[]) {
+  int array[] = { 2, 4, 0, 1, 9 };
+  int x = 1;
+
+  int result = linearSearch(array, x);
+
+  if (result == -1)
+    System.out.print("Element not found");
+  else
+    System.out.print("Element found at index: " + result);
+  }
+}
+Linear Search Complexities
+Time Complexity: O(n)
+
+
+Space Complexity: O(1)
+
+Linear Search Applications
+For searching operations in smaller arrays (<100 items).
