@@ -32,6 +32,12 @@ initially, set value of FRONT and REAR to -1
 Enqueue Operation
 check if the queue is full
 for the first element, set the value of FRONT to 0
+
+Recommended Readings
+Types of Queue
+Circular Queue
+Deque Data Structure
+Priority Queue
 increase the REAR index by 1
 add the new element in the position pointed to by REAR
 Dequeue Operation
