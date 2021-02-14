@@ -1,0 +1,316 @@
+What is an Algorithm?
+========================
+Answer: An algorithm is a set of well-defined instructions in sequence to solve a problem.
+
+Qualities of a good algorithm
+Input and output should be defined precisely.
+Each step in the algorithm should be clear and unambiguous.
+Algorithms should be most effective among many different ways to solve a problem.
+An algorithm shouldn't include computer code. Instead, the algorithm should be written in such a way that it can be used in different programming languages.
+
+Examples Of Algorithms In Programming
+Algorithm to add two numbers entered by the user
+
+Step 1: Start
+Step 2: Declare variables num1, num2 and sum. 
+Step 3: Read values num1 and num2. 
+Step 4: Add num1 and num2 and assign the result to sum.
+        sum←num1+num2 
+Step 5: Display sum 
+Step 6: Stop
+
+Find the largest number among three different numbers
+
+Step 1: Start
+Step 2: Declare variables a,b and c.
+Step 3: Read variables a,b and c.
+Step 4: If a > b
+           If a > c
+              Display a is the largest number.
+           Else
+              Display c is the largest number.
+        Else
+           If b > c
+              Display b is the largest number.
+           Else
+           
+           
+           
+           What are Algorithms?
+Informally, an algorithm is nothing but a mention of steps to solve a problem. They are essentially a solution.
+
+For example, an algorithm to solve the problem of factorials might look something like this:
+
+Problem: Find the factorial of n
+
+Initialize fact = 1
+For every value v in range 1 to n:
+    Multiply the fact by v
+fact contains the factorial of n
+Here, the algorithm is written in English. If it was written in a programming language, we would call it to code instead. Here is a code for finding the factorial of a number in C++.
+
+int factorial(int n) {
+    int fact = 1;
+    for (int v = 1; v <= n; v++) {
+        fact = fact * v;
+    }
+    return fact;
+}
+
+In above code use can use formula like below 
+
+Sum = N * (N + 1) / 2
+Converting it into code will look something like this:
+
+int sum(int N) {
+    return N * (N + 1) / 2;
+}
+
+Asymptotic Analysis: Big-O Notation and More
+In this tutorial, you will learn what asymptotic notations are. Also, you will learn about Big-O notation, Theta notation and Omega notation.
+
+
+The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.
+
+An algorithm may not have the same performance for different types of inputs. With the increase in the input size, the performance will change.
+
+The study of change in performance of the algorithm with the change in the order of the input size is defined as asymptotic analysis.
+
+Asymptotic Notations
+Asymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value.
+
+For example: In bubble sort, when the input array is already sorted, the time taken by the algorithm is linear i.e. the best case.
+
+But, when the input array is in reverse condition, the algorithm takes the maximum time (quadratic) to sort the elements i.e. the worst case.
+
+When the input array is neither sorted nor in reverse order, then it takes average time. These durations are denoted using asymptotic notations.
+
+There are mainly three asymptotic notations:
+
+Big-O notation
+Omega notation
+Theta notation
+
+
+Master Theorem
+In this tutorial, you will learn what master theorem is and how it is used for solving recurrence relations.
+
+
+The master method is a formula for solving recurrence relations of the form:
+
+T(n) = aT(n/b) + f(n),
+where,
+n = size of input
+a = number of subproblems in the recursion
+n/b = size of each subproblem. All subproblems are assumed 
+     to have the same size.
+f(n) = cost of the work done outside the recursive call, 
+      which includes the cost of dividing the problem and
+      cost of merging the solutions
+
+Here, a ≥ 1 and b > 1 are constants, and f(n) is an asymptotically positive function.
+An asymptotically positive function means that for a sufficiently large value of n, we have f(n) > 0.
+
+The master theorem is used in calculating the time complexity of recurrence relations (divide and conquer algorithms) in a simple and quick way.
+
+Master Theorem
+If a ≥ 1 and b > 1 are constants and f(n) is an asymptotically positive function, then the time complexity of a recursive relation is given by
+
+T(n) = aT(n/b) + f(n)
+
+where, T(n) has the following asymptotic bounds:
+
+    1. If f(n) = O(nlogb a-ϵ), then T(n) = Θ(nlogb a).
+
+    2. If f(n) = Θ(nlogb a), then T(n) = Θ(nlogb a * log n).
+
+    3. If f(n) = Ω(nlogb a+ϵ), then T(n) = Θ(f(n)).
+
+ϵ > 0 is a constant.
+
+Each of the above conditions can be interpreted as:
+
+If the cost of solving the sub-problems at each level increases by a certain factor, the value of f(n) will become polynomially smaller than nlogb a. Thus, the time complexity is oppressed by the cost of the last level ie. nlogb a
+If the cost of solving the sub-problem at each level is nearly equal, then the value of f(n) will be nlogb a. Thus, the time complexity will be f(n) times the total number of levels ie. nlogb a * log n
+If the cost of solving the subproblems at each level decreases by a certain factor, the value of f(n) will become polynomially larger than nlogb a. Thus, the time complexity is oppressed by the cost of f(n).
+Solved Example of Master Theorem
+T(n) = 3T(n/2) + n2
+Here,
+a = 3
+n/b = n/2
+f(n) = n2
+
+logb a = log2 3 ≈ 1.58 < 2
+
+ie. f(n) < nlogb a+ϵ , where, ϵ is a constant.
+
+Case 3 implies here.
+
+Thus, T(n) = f(n) = Θ(n2) 
+Master Theorem Limitations
+The master theorem cannot be used if:
+
+T(n) is not monotone. eg. T(n) = sin n
+f(n) is not a polynomial. eg. f(n) = 2n
+a is not a constant. eg. a = 2n
+a < 1
+
+
+Divide and Conquer Algorithm
+In this tutorial, you will learn how the divide and conquer algorithm works. We will also compare the divide and conquer approach versus other approaches to solve a recursive problem.
+
+
+A divide and conquer algorithm is a strategy of solving a large problem by
+
+breaking the problem into smaller sub-problems
+solving the sub-problems, and
+combining them to get the desired output.
+To use the divide and conquer algorithm, recursion is used. Learn about recursion in different programming languages:
+
+Recursion in Java
+Recursion in Python
+Recursion in C++
+How Divide and Conquer Algorithms Work?
+Here are the steps involved:
+
+Divide: Divide the given problem into sub-problems using recursion.
+Conquer: Solve the smaller sub-problems recursively. If the subproblem is small enough, then solve it directly.
+Combine: Combine the solutions of the sub-problems that are part of the recursive process to solve the actual problem.
+Let us understand this concept with the help of an example.
+
+Here, we will sort an array using the divide and conquer approach (ie. merge sort).
+
+Let the given array be:
+initial array for merge sort
+Array for merge sort
+Divide the array into two halves.
+Divide the array into two subparts
+Divide the array into two subparts
+
+Again, divide each subpart recursively into two halves until you get individual elements.
+Divide the array into smaller subparts
+Divide the array into smaller subparts
+Now, combine the individual elements in a sorted manner. Here, conquer and combine steps go side by side.
+Combine the subparts
+Combine the subparts
+Time Complexity
+The complexity of the divide and conquer algorithm is calculated using the master theorem.
+
+T(n) = aT(n/b) + f(n),
+where,
+n = size of input
+a = number of subproblems in the recursion
+n/b = size of each subproblem. All subproblems are assumed to have the same size.
+f(n) = cost of the work done outside the recursive call, which includes the cost of dividing the problem and cost of merging the solutions
+
+Let us take an example to find the time complexity of a recursive problem.
+
+For a merge sort, the equation can be written as:
+
+T(n) = aT(n/b) + f(n)
+     = 2T(n/2) + O(n)
+Where, 
+a = 2 (each time, a problem is divided into 2 subproblems)
+n/b = n/2 (size of each sub problem is half of the input)
+f(n) = time taken to divide the problem and merging the subproblems
+T(n/2) = O(n log n) (To understand this, please refer to the master theorem.)
+
+Now, T(n) = 2T(n log n) + O(n)
+          ≈ O(n log n)
+Divide and Conquer Vs Dynamic approach
+
+The divide and conquer approach divides a problem into smaller subproblems; these subproblems are further solved recursively. The result of each subproblem is not stored for future reference, whereas, in a dynamic approach, the result of each subproblem is stored for future reference.
+
+Use the divide and conquer approach when the same subproblem is not solved multiple times. Use the dynamic approach when the result of a subproblem is to be used multiple times in the future.
+
+Let us understand this with an example. Suppose we are trying to find the Fibonacci series. Then,
+
+Divide and Conquer approach:
+
+fib(n)
+    If n < 2, return 1
+    Else , return f(n - 1) + f(n -2)
+Dynamic approach:
+
+mem = []
+fib(n)
+    If n in mem: return mem[n] 
+    else,     
+        If n < 2, f = 1
+        else , f = f(n - 1) + f(n -2)
+        mem[n] = f
+        return f
+In a dynamic approach, mem stores the result of each subproblem.
+
+Advantages of Divide and Conquer Algorithm
+The complexity for the multiplication of two matrices using the naive method is O(n3), whereas using the divide and conquer approach (i.e. Strassen's matrix multiplication) is O(n2.8074). This approach also simplifies other problems, such as the Tower of Hanoi.
+This approach is suitable for multiprocessing systems.
+It makes efficient use of memory caches.
+Divide and Conquer Applications
+Binary Search
+Merge Sort
+Quick Sort
+Strassen's Matrix multiplication
+Karatsuba Algorithm
+
+              Display c is the greatest number.  
+Step 5: Stop
+Roots of a quadratic equation ax2 + bx + c = 0
+
+Step 1: Start
+Step 2: Declare variables a, b, c, D, x1, x2, rp and ip;
+Step 3: Calculate discriminant
+         D ← b2-4ac
+Step 4: If D ≥ 0
+              r1 ← (-b+√D)/2a
+              r2 ← (-b-√D)/2a 
+              Display r1 and r2 as roots.
+        Else     
+              Calculate real part and imaginary part
+              rp ← -b/2a
+              ip ← √(-D)/2a
+              Display rp+j(ip) and rp-j(ip) as roots
+Step 5: Stop             
+Factorial of a number entered by the user.
+
+Step 1: Start
+Step 2: Declare variables n, factorial and i.
+Step 3: Initialize variables
+          factorial ← 1
+          i ← 1
+Step 4: Read value of n
+Step 5: Repeat the steps until i = n
+     5.1: factorial ← factorial*i
+     5.2: i ← i+1
+Step 6: Display factorial
+Step 7: Stop
+Check whether a number is a prime number or not
+
+Step 1: Start
+Step 2: Declare variables n, i, flag.
+Step 3: Initialize variables
+        flag ← 1
+        i ← 2  
+Step 4: Read n from the user.
+Step 5: Repeat the steps until i=(n/2)
+     5.1 If remainder of n÷i equals 0
+            flag ← 0
+            Go to step 6
+     5.2 i ← i+1
+Step 6: If flag = 0
+           Display n is not prime
+        else
+           Display n is prime
+Step 7: Stop 
+Find the Fibonacci series till term ≤ 1000.
+
+Step 1: Start 
+Step 2: Declare variables first_term,second_term and temp. 
+Step 3: Initialize variables first_term ← 0 second_term ← 1 
+Step 4: Display first_term and second_term 
+Step 5: Repeat the steps until second_term ≤ 1000 
+     5.1: temp ← second_term 
+     5.2: second_term ← second_term + first_term 
+     5.3: first_term ← temp 
+     5.4: Display second_term 
+Step 6: Stop
